@@ -39,7 +39,7 @@ public void OnPluginStart()
 
 void ChangeCvar_CommandsList(ConVar Convar, const char[] oldValue, const char[] newValue)
 {
-	char szBuffer[512];
+	char szBuffer[128];
 
 	strcopy(szBuffer, sizeof(szBuffer), oldValue);
 	HookCommands(szBuffer, false);
