@@ -221,7 +221,7 @@ public void HTTPRequestComplete(Handle hRequest, bool bFailure, bool bRequestSuc
 		}
 		case 400: LogError("Response: Invalid request parameters");
 		case 403: LogError("Response: Invalid or missing API key");
-		case 408, 425:
+		case 408, 503:
 		{
 			int iClient = GetClientOfUserId(iUserID);
 			if (iClient && g_hRetryList.FindValue(iUserID) == -1)
