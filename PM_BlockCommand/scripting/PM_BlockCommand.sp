@@ -29,8 +29,7 @@ public void OnPluginStart()
 	ConVar Convar;
 	(Convar = CreateConVar(
 		"sm_pm_block_commands",	"",
-		"Block commands for non prime players",
-		_, true, 0.0, true, 1.0
+		"Block commands for non prime players. Example: \"sm_ws;sm_vip\""
 	)).AddChangeHook(ChangeCvar_CommandsList);
 	ChangeCvar_CommandsList(Convar, NULL_STRING, NULL_STRING);
 
