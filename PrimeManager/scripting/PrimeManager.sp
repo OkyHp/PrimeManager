@@ -75,11 +75,6 @@ public void OnMapStart()
 void ChangeCvar_ApiKey(ConVar Convar, const char[] oldValue, const char[] newValue)
 {
 	Convar.GetString(g_sApiKey, sizeof(g_sApiKey));
-
-	if (!g_sApiKey[0])
-	{
-		LogError("Invalid API Key!");
-	}
 }
 
 void ChangeCvar_FailRequestInterval(ConVar Convar, const char[] oldValue, const char[] newValue)
@@ -225,6 +220,7 @@ public void HTTPRequestComplete(Handle hRequest, bool bFailure, bool bRequestSuc
 			}
 		}
 		case 400: LogError("Response: Invalid request parameters");
+		case 403: LogError("Response: Invalid or missing API key");
 		case 408, 425:
 		{
 			int iClient = GetClientOfUserId(iUserID);
