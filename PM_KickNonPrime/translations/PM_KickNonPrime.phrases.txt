@@ -1,0 +1,16 @@
+"Phrases"
+{
+	"Kick_Reason"
+	{
+		"en"	"To play on this server you need to have a Prime status"
+		"ru"	"Для игры на этом сервере необходим прайм статус"
+		"ua"	"Для гри на цьому сервері потрібно мати прайм статус"
+	}
+
+	"Kick_AdmOrVip"
+	{
+		"en"	"or availability Admin/Vip privileges. \nDetails: https://site.ru/"
+		"ru"	"или наличие Админ/Vip привилегии. \nПодробнее: https://site.ru/"
+		"ua"	"або наявність Адмін/Vip привілегії. \nДеталі: https://site.ru/"
+	}
+}
