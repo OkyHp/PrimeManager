@@ -1,0 +1,16 @@
+"Phrases"
+{
+	"NeedPrimeForUseCommand"
+	{
+		"en"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}You need prime account to use this command!"
+		"ru"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}Для использования этой команды нужно наличие прайм аккаунта!"
+		"ua"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}Для використання цієї команди потрібна наявність прайм аккаунту!"
+	}
+
+	"PrimeDataNotLoaded"
+	{
+		"en"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}Your account data is being loaded. Please try again later!"
+		"ru"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}Данные о вашем аккаунте загружаются. Повторите попытку позже!"
+		"ua"	"{GREEN}[ {RED}PM {GREEN}] {DEFAULT}Дані про ваш обліковий запис завантажуються. Будь ласка, спробуйте пізніше!"
+	}
+}
