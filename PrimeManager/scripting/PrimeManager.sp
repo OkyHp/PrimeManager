@@ -219,7 +219,11 @@ public void HTTPRequestComplete(Handle hRequest, bool bFailure, bool bRequestSuc
 				CallForward_OnClientDataPrimeLoadedPost(iClient, g_iPlayerAccountID[iClient], g_ePlayerPrime[iClient]);
 			}
 		}
-		case 400: LogError("Response: Invalid request parameters");
+		case 400:
+		{
+			int iClient = GetClientOfUserId(iUserID);
+			LogError("Response: Invalid request parameters: iClient: %i | iAccountID: %i", iClient, g_iPlayerAccountID[iClient]);
+		}
 		case 403: LogError("Response: Invalid or missing API key");
 		case 408, 503:
 		{
