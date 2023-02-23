@@ -7,7 +7,6 @@
 #define START	0
 #define STOP	1
 
-int		g_iWorkType;
 bool	g_bCanAccess;
 float	g_fCheckTime[2];
 
@@ -34,12 +33,6 @@ public void OnPluginStart()
 {
 	ConVar Convar;
 	(Convar = CreateConVar(
-		"sm_pm_access_by_time_type",	"0",
-		"Work type: 0 - Ignore on pre prime check; 1 - Ignore when it is already known about status of prime"
-	)).AddChangeHook(ChangeCvar_WorkType);
-	ChangeCvar_WorkType(Convar, NULL_STRING, NULL_STRING);
-
-	(Convar = CreateConVar(
 		"sm_pm_access_by_time_start",	"02.00",
 		"Time of start ignore non-prime players."
 	)).AddChangeHook(ChangeCvar_TimeStart);
@@ -52,11 +45,6 @@ public void OnPluginStart()
 	ChangeCvar_TimeStop(Convar, NULL_STRING, NULL_STRING);
 
 	AutoExecConfig(true, "PM_AccessByTime");
-}
-
-void ChangeCvar_WorkType(ConVar Convar, const char[] oldValue, const char[] newValue)
-{
-	g_iWorkType = Convar.IntValue;
 }
 
 void ChangeCvar_TimeStart(ConVar Convar, const char[] oldValue, const char[] newValue)
@@ -89,14 +77,9 @@ public void OnMapStart()
 	);
 }
 
-public Action PM_OnClientPreDataPrimeLoad(int iClient, int iAccountID)
+public Action PM_OnClientDataPrimeLoaded(int iClient, PrimeState &ePrime)
 {
-	return (!g_iWorkType && g_bCanAccess ? Plugin_Handled : Plugin_Continue);
-}
-
-public Action PM_OnClientDataPrimeLoaded(int iClient, int iAccountID, PrimeState &ePrime)
-{
-	if (g_iWorkType && g_bCanAccess && ePrime == NonPrimeAccount)
+	if (g_bCanAccess && ePrime == NonPrimeAccount)
 	{
 		ePrime = IgnoredPlayer;
 		return Plugin_Changed;

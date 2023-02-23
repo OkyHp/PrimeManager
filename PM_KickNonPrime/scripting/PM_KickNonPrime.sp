@@ -138,12 +138,13 @@ public void VIP_OnVIPClientAdded(int iClient, int iAdmin)
 	}
 }
 
-public void PM_OnClientDataPrimeLoadedPost(int iClient, int iAccountID, PrimeState ePrime)
+public void PM_OnClientDataPrimeLoadedPost(int iClient, PrimeState ePrime)
 {
 	if (ePrime == NonPrimeAccount)
 	{
 		if (!g_iType)
 		{
+			int iAccountID = GetSteamAccountID(iClient, true);
 			if (FindAdminByIdentity(AUTHMETHOD_STEAM, GetSteamID2(iAccountID)) == INVALID_ADMIN_ID 
 				|| (g_bVipLoaded && g_hVipPlayers.FindValue(iAccountID) == -1))
 			{

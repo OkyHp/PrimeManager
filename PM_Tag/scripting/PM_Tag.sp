@@ -35,7 +35,7 @@ void ChangeCvar_Tag(ConVar Convar, const char[] oldValue, const char[] newValue)
 	Convar.GetString(g_sTag, sizeof g_sTag);
 }
 
-public void PM_OnClientDataPrimeLoadedPost(int iClient, int iAccountID, PrimeState ePrime)
+public void PM_OnClientDataPrimeLoadedPost(int iClient, PrimeState ePrime)
 {
 	if (IsValidClient(iClient))
 	{

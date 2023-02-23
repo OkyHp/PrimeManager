@@ -10,8 +10,8 @@ public Plugin myinfo =
 {
 	name		= "[PM] White List",
 	author		= "OkyHp",
-	version		= "1.0.0",
-	url			= "OkyHek#2441, https://prime.napas.cc/"
+	version		= "1.1.0",
+	url			= "OkyHek#2441"
 };
 
 public APLRes AskPluginLoad2(Handle hMyself, bool bLate, char[] szError, int iErr_max)
@@ -56,7 +56,9 @@ public void OnMapStart()
 	delete hFile;
 }
 
-public Action PM_OnClientPreDataPrimeLoad(int iClient, int iAccountID)
+public Action PM_OnClientDataPrimeLoaded(int iClient, PrimeState &ePrime)
 {
-	return (g_hWhiteList.FindValue(iAccountID) != -1 ? Plugin_Handled : Plugin_Continue);
+	ePrime = IgnoredPlayer;
+
+	return (g_hWhiteList.FindValue(GetSteamAccountID(iClient)) != -1 ? Plugin_Changed : Plugin_Continue);
 }
