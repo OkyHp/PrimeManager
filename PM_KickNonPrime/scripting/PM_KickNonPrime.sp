@@ -18,7 +18,7 @@ public Plugin myinfo =
 {
 	name		= "[PM] Kick Non Prime",
 	author		= "OkyHp",
-	version		= "1.0.0",
+	version		= "1.1.0",
 	url			= "OkyHek#2441, https://prime.napas.cc/"
 };
 

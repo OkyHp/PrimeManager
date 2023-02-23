@@ -10,7 +10,7 @@ public Plugin myinfo =
 {
 	name		= 	"[PM] Tag",
 	author		= 	"Fr4nch",
-	version		= 	"1.0",
+	version		= 	"1.1.0",
 	description =	"Changing the clan tag to non-Prime players",
 	url			= 	"Fr4nch#3657, https://prime.napas.cc/"
 };

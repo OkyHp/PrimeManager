@@ -14,8 +14,8 @@ public Plugin myinfo =
 {
 	name		= "[PM] Access By Time",
 	author		= "OkyHp",
-	version		= "1.0.0",
-	url			= "OkyHek#2441, https://prime.napas.cc/"
+	version		= "1.1.0",
+	url			= "OkyHek#2441"
 };
 
 public APLRes AskPluginLoad2(Handle hMyself, bool bLate, char[] szError, int iErr_max)
